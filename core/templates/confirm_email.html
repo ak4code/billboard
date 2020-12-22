@@ -1,0 +1,5 @@
+{% autoescape off %}
+    Для подтверждения вашего адреса электронной почты {{ user.email }},
+    пожалуйста, перейдите по ссылке или вставьте в адресную строку вашего браузера
+    http://{{ domain }}{% url 'core:activate' uidb64=uid token=token %}
+{% endautoescape %}

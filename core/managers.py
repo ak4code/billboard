@@ -5,7 +5,7 @@ from django.contrib.auth.base_user import BaseUserManager
 class AccountManager(BaseUserManager):
     """
     Кастомный менеджер модели, где электронная почта является уникальным идентификатором.
-    для аутентификации вместо имен пользователей.
+    для аутентификации вместо имени пользователя.
     """
     def create_user(self, email, password, **extra_fields):
         """
@@ -21,7 +21,7 @@ class AccountManager(BaseUserManager):
 
     def create_superuser(self, email, password, **extra_fields):
         """
-        Создать и сохранить Супер-Пользоваиеля использую email и пароль.
+        Создать и сохранить Супер-Пользователя используя email и пароль.
         """
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
