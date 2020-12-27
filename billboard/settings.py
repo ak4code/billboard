@@ -24,6 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'manifest_loader',
     'mptt',
     'core.apps.CoreConfig',
 ]
@@ -105,7 +107,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'dist'
+]
+
 STATIC_URL = '/static/'
+
+SITE_ID = 1
 
 DEFAULT_FROM_EMAIL = f'TEMRUK.BIZ <{config("EMAIL_HOST_USER")}>'
 

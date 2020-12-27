@@ -1,3 +1,4 @@
+{% load manifest %}
 <!DOCTYPE html>
 <html class="no-js" lang="ru">
 <head>
@@ -6,10 +7,13 @@
     <title>{% block seo_title %}Темрюк.Биз{% endblock %}</title>
     <meta name="description" content="{% block seo_desc %}Темрюк.Биз{% endblock %}">
     <link rel="shortcut icon" href=""/>
+    {% manifest_match '*.css' ' <link href="{match}" rel="preload" as="style">' %}
+    {% manifest_match '*.js' ' <link href="{match}" rel="preload" as="script">' %}
 </head>
 <body>
 <div>
     {% block content %}{% endblock %}
 </div>
+{% manifest_match '*.js' '<script src="{match}" defer></script>' %}
 </body>
 </html>
