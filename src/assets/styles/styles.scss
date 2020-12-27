@@ -1,0 +1,13 @@
+@import "theme/variables";
+
+@import "~uikit/src/scss/variables-theme.scss";
+@import "~uikit/src/scss/mixins-theme.scss";
+
+// 3. Your custom mixin overwrites.
+//@import "theme/accordion-mixins.scss";
+
+@import "~uikit/src/scss/uikit-theme.scss";
+
+.t-header {
+  background: #09468a;
+}

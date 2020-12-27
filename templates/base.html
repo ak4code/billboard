@@ -2,18 +2,32 @@
 <!DOCTYPE html>
 <html class="no-js" lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block seo_title %}Темрюк.Биз{% endblock %}</title>
-    <meta name="description" content="{% block seo_desc %}Темрюк.Биз{% endblock %}">
-    <link rel="shortcut icon" href=""/>
-    {% manifest_match '*.css' ' <link href="{match}" rel="preload" as="style">' %}
-    {% manifest_match '*.js' ' <link href="{match}" rel="preload" as="script">' %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block seo_title %}Темрюк.Биз{% endblock %}</title>
+  <meta name="description" content="{% block seo_desc %}Темрюк.Биз{% endblock %}">
+  <link rel="shortcut icon" href=""/>
+  {% manifest_match '*.css' '<link href="{match}" rel="preload" as="style">' %}
+  {% manifest_match '*.js' '<link href="{match}" rel="preload" as="script">' %}
+  {% manifest_match '*.css' '<link href="{match}" rel="stylesheet">' %}
 </head>
 <body>
-<div>
-    {% block content %}{% endblock %}
+<div id="app">
+  <header class="t-header uk-box-shadow-medium uk-margin-bottom uk-light">
+    <nav class="uk-navbar-container uk-navbar-transparent uk-container uk-container-large" uk-navbar>
+      <div class="uk-navbar-left">
+        <a class="uk-navbar-item" href="/">LOGO</a>
+      </div>
+      <div class="uk-navbar-center">
+        <a class="uk-navbar-item" href="/">MENU</a>
+      </div>
+      <div class="uk-navbar-right">
+        <a class="uk-navbar-item" href="/">ACCOUNT</a>
+      </div>
+    </nav>
+  </header>
+  {% block content %}{% endblock %}
 </div>
-{% manifest_match '*.js' '<script src="{match}" defer></script>' %}
+{% manifest_match '*.js' '<script src="{match}"></script>' %}
 </body>
 </html>
